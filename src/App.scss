@@ -2,9 +2,17 @@ $bg: #111111;
 $bgHi: #222222;
 $col: #cccccc;
 $colHi: #eeeeee;
+$border: 1px solid $col;
 $padding: 10px;
 $paddingSmall: 3px;
-
+* {
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
 body {
   background-color: $bg;
   color: $col;
@@ -18,6 +26,11 @@ li {
   color: $col;
   margin: 0;
   padding: $paddingSmall;
+}
+hr {
+  $margin: calc($padding * 2);
+  border: $border;
+  margin: $margin 0 $margin 0;
 }
 .centerForced {
   left: 50%;
@@ -57,12 +70,13 @@ li {
   z-index: 2;
 }
 .sidebarToggler {
+  $offset: 10px;
   cursor: pointer;
   filter: brightness(0.33);
   height: 32px;
-  left: 10px;
+  left: $offset;
   position: absolute;
-  top: 10px;
+  top: $offset;
   width: 32px;
   transition: 0.2s ease;
   z-index: 3;
@@ -72,17 +86,24 @@ li {
   filter: brightness(1);
 }
 .headshot {
+  $size: 7em;
   aspect-ratio: 1;
   border: 2px solid white;
   border-radius: 999px;
-  height: 5em;
+  height: $size;
   overflow: hidden;
-  width: 5em;
+  width: $size;
+}
+.name,
+.header {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.name {
+  font-size: 24pt;
 }
 .header {
   font-size: 16pt;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 .subheader {
   font-size: 12pt;
@@ -97,8 +118,13 @@ li {
   gap: 10px;
 }
 ul {
-    margin: 0 0 15px 0;
+  margin: 0 0 15px 0;
 }
 .list li {
-    text-transform: lowercase
+  text-transform: lowercase;
+}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ANIMATED INTRO //
+.typedText {
+    font-size: 96pt;
+    font-weight: 200;
 }

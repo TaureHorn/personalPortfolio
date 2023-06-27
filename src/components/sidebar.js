@@ -26,7 +26,7 @@ export default function Sidebar() {
       <div className="padding sidebar">
         <div className="center">
           <img src={Headshot} className="headshot" alt="headshot" title="hi!" />
-          <p className="header">Alex Baird</p>
+          <p className="name">Alex Baird</p>
           <p className="subheader">full stack web developer</p>
           <div className="externalLinks">
             <div className="linkContainer">
@@ -97,6 +97,24 @@ export default function Sidebar() {
           <li className="link">Learning Linux</li>
         </ul>
         <hr />
+          <p className="header"> External Links</p>
+          <a
+            className="link subheader"
+            href="https://thedeveloperacademy.com/courses/funded-software-bootcamp/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            The Developer Academy Bootcamp
+          </a>
+          <br />
+          <a
+            className="link subheader"
+            href="https://github.com/TDAWebDevBootcamp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            The Developer Academy Github
+          </a>
       </div>
     </>
   ) : (
