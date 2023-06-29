@@ -3,6 +3,7 @@ $bgHi: #222222;
 $col: #cccccc;
 $colHi: #eeeeee;
 $border: 1px solid $col;
+$fontSize: 10pt;
 $padding: 10px;
 $paddingSmall: 3px;
 * {
@@ -17,8 +18,7 @@ body {
   background-color: $bg;
   color: $col;
   font-family: monospace;
-  font-size: 14pt;
-  min-height: 100%;
+  font-size: $fontSize;
 }
 p,
 a,
@@ -31,6 +31,11 @@ hr {
   $margin: calc($padding * 2);
   border: $border;
   margin: $margin 0 $margin 0;
+}
+input,
+button {
+  border: $border;
+  color: $col;
 }
 .centerForced {
   left: 50%;
@@ -61,9 +66,12 @@ hr {
 .sidebar {
   background-color: $bgHi;
   border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   position: absolute;
   left: 0;
-  min-height: 100vh;
+  min-height: 98vh;
   max-width: 25%;
   min-width: 8%;
   transition: 0.5s ease;
@@ -86,11 +94,13 @@ hr {
   filter: brightness(1);
 }
 .headshot {
-  $size: 7em;
+  $margin: calc($padding * 2);
+  $size: 10em;
   aspect-ratio: 1;
   border: 2px solid white;
   border-radius: 999px;
   height: $size;
+  margin: $margin 0 $margin 0;
   overflow: hidden;
   width: $size;
 }
@@ -100,10 +110,12 @@ hr {
   text-transform: uppercase;
 }
 .name {
-  font-size: 24pt;
+  $size: calc($fontSize * 3);
+  font-size: $size;
 }
 .header {
-  font-size: 16pt;
+  $size: calc($fontSize * 1.5);
+  font-size: $size;
 }
 .subheader {
   font-size: 12pt;
@@ -125,6 +137,26 @@ ul {
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ANIMATED INTRO //
 .typedText {
-    font-size: 96pt;
-    font-weight: 200;
+  $size: calc($fontSize * 4);
+  font-size: $size;
+  font-weight: 200;
 }
+.centreText {
+  left: 50%;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEXGRID //
+.formLabel {
+    align-items:center;
+    display:flex;
+    gap: 10px;
+}
+.hexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width:50vw;
+}
+

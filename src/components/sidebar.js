@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FileSaver from "file-saver";
 
 import CV from "../data/CV.pdf";
 import Document from "../resources/icons/document.svg";
@@ -70,33 +69,36 @@ export default function Sidebar() {
           </div>
         </div>
         <hr />
-        <p className="header link" onClick={() => navigate("/")}>
-          Home
-        </p>
-        <p className="header link" onClick={() => navigate("/projects")}>
-          Projects
-        </p>
-        <ul className="list subheader">
-          <li className="link">hacking text adventure game</li>
-          <li className="link">browser startpage</li>
-          <li className="link">neovim config</li>
-        </ul>
-        <p className="header link" onClick={() => navigate("/bootcamp")}>
-          Web Dev Bootcamp
-        </p>
-        <ul className="list subheader">
-          <li className="link">Social Music Site</li>
-          <li className="link">Events Tracker</li>
-          <li className="link">Fantasy Bestiary Quiz</li>
-        </ul>
-        <p className="header link" onClick={() => navigate("/hobbies")}>
-          Hobbies
-        </p>
-        <ul className="list subheader">
-          <li className="link">Dungeons and Dragons</li>
-          <li className="link">Learning Linux</li>
-        </ul>
+        <div id="internalLinks">
+          <p className="header link" onClick={() => navigate("/")}>
+            Home
+          </p>
+          <p className="header link" onClick={() => navigate("/projects")}>
+            Projects
+          </p>
+          <ul className="list subheader">
+            <li className="link">hacking text adventure game</li>
+            <li className="link">browser startpage</li>
+            <li className="link">neovim config</li>
+          </ul>
+          <p className="header link" onClick={() => navigate("/bootcamp")}>
+            Web Dev Bootcamp
+          </p>
+          <ul className="list subheader">
+            <li className="link">Social Music Site</li>
+            <li className="link">Events Tracker</li>
+            <li className="link">Fantasy Bestiary Quiz</li>
+          </ul>
+          <p className="header link" onClick={() => navigate("/hobbies")}>
+            Hobbies
+          </p>
+          <ul className="list subheader">
+            <li className="link">Dungeons and Dragons</li>
+            <li className="link">Learning Linux</li>
+          </ul>
+        </div>
         <hr />
+        <div id="externalLinks">
           <p className="header"> External Links</p>
           <a
             className="link subheader"
@@ -115,6 +117,7 @@ export default function Sidebar() {
           >
             The Developer Academy Github
           </a>
+        </div>
       </div>
     </>
   ) : (

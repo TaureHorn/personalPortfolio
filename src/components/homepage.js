@@ -1,8 +1,7 @@
 export default function Homepage(props) {
   return (
-    <div style={{ textAlign: "justify" }}>
+    <div className="centerForced" style={{ textAlign: "justify" }}>
       <p style={{ fontWeight: "bold", fontStyle: "italic" }}>guten tag</p>
-      Vulputate feugiat nisi elit dapibus velit{" "}
       <p>
         Molestie integer faucibus ut nunc dignissim nulla. Massa vel et, pretium
         lorem nisl tincidunt aenean bibendum, enim nec. Nec condimentum dui
