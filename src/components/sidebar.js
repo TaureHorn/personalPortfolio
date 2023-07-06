@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SidebarCloser from "../resources/icons/sidebarCloser.svg";
 import SidebarOpener from "../resources/icons/sidebarOpener.svg";
 
+import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
 
 export default function Sidebar(props) {
@@ -37,12 +38,18 @@ export default function Sidebar(props) {
     return Object.entries(props.content.main).map((header) => {
       return (
         <div key={genRand(4)}>
-          <p className="header link">{header[0]}</p>
+          <a className="link" href={header[1].metadata.url}>
+            <p className="header link">{header[0]}</p>
+          </a>
           <ul className="list subheader">
             {header[1].data.map((subsection) => {
+              const name = catString(subsection.name, "-");
+              const link = `${header[1].metadata.url}#${name}`;
               return (
                 <div key={genRand(3)}>
-                  <li className="link">{subsection.name}</li>
+                  <a className="link noPadding" href={link}>
+                    <li className="link">{subsection.name}</li>
+                  </a>
                 </div>
               );
             })}

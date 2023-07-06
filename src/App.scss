@@ -46,6 +46,9 @@ button {
 .padding {
   padding: $padding;
 }
+.noPadding {
+  padding: 0 !important;
+}
 .center {
   text-align: center;
 }
@@ -150,13 +153,12 @@ ul {
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEXGRID //
 .formLabel {
-    align-items:center;
-    display:flex;
-    gap: 10px;
+  align-items: center;
+  display: flex;
+  gap: 10px;
 }
 .hexGrid {
   display: flex;
   flex-wrap: wrap;
-  width:50vw;
+  width: 50vw;
 }
-

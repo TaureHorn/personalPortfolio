@@ -7,10 +7,25 @@ import Content from "./data/content.json";
 
 import AnimatedIntro from "./components/animatedIntro";
 import Homepage from "./components/homepage";
+import Section from "./components/section";
 import Sidebar from "./components/sidebar";
+
+import { genRand } from "./functions/random";
 
 export default function App() {
   const [introOver, setIntroOver] = useState(false);
+  const routes = () => {
+    return Object.entries(Content.main).map((header) => {
+      console.log(header);
+      return (
+        <Route
+          path={header[1].metadata.url}
+          key={genRand(3)}
+          element={<Section content={header} />}
+        />
+      );
+    });
+  };
   return (
     <>
       <Sidebar content={Content} />
@@ -27,9 +42,7 @@ export default function App() {
             )
           }
         />
-        <Route path="/projects" />
-        <Route path="/bootcamp" />
-        <Route path="/hobbies" />
+        {routes()}
       </Routes>
     </>
   );
