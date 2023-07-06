@@ -16,6 +16,7 @@ export default function HexGrid() {
 
   const [gridVariables, setGridVariables] = useState({});
   const [randomHexCodes, generateRandomHexCodes] = useState([]);
+    console.log(randomHexCodes)
 
   useEffect(() => {
     generateRandomHexCodes(

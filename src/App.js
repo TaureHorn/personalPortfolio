@@ -3,8 +3,9 @@ import { Route, Routes } from "react-router-dom";
 
 import "./App.scss";
 
+import Content from "./data/content.json";
+
 import AnimatedIntro from "./components/animatedIntro";
-import HexGrid from "./components/hexgrid";
 import Homepage from "./components/homepage";
 import Sidebar from "./components/sidebar";
 
@@ -12,7 +13,7 @@ export default function App() {
   const [introOver, setIntroOver] = useState(false);
   return (
     <>
-      <Sidebar />
+      <Sidebar content={Content} />
       <Routes>
         <Route
           path="/"
@@ -29,7 +30,6 @@ export default function App() {
         <Route path="/projects" />
         <Route path="/bootcamp" />
         <Route path="/hobbies" />
-        <Route path="/playground" element={<HexGrid />} />
       </Routes>
     </>
   );
