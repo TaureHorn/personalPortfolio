@@ -1,10 +1,18 @@
+import { genRand } from "../functions/random";
+import Post from "./post";
+
 export default function Section(props) {
-  console.log(props.content);
+  function posts() {
+    return props.content.data.map((post) => {
+      return <Post key={genRand(4)} data={post} />;
+    });
+  }
   return (
     <>
-      <div className="centerForced">
-        <p>{props.content[1].metadata.explainer}</p>
+      <div className="post">
+        <p>{props.content.metadata.explainer}</p>
       </div>
+      {posts()}
     </>
   );
 }

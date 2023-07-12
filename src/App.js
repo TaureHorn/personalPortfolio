@@ -16,12 +16,11 @@ export default function App() {
   const [introOver, setIntroOver] = useState(false);
   const routes = () => {
     return Object.entries(Content.main).map((header) => {
-      console.log(header);
       return (
         <Route
           path={header[1].metadata.url}
           key={genRand(3)}
-          element={<Section content={header} />}
+          element={<Section content={header[1]} />}
         />
       );
     });
