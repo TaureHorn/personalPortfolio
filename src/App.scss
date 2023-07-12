@@ -1,11 +1,21 @@
 $bg: #111111;
 $bgHi: #222222;
+$bgTrans: rgba(0, 0, 0, 0.33);
+$bgLessTrans: rgba(0, 0, 0, 0.66);
+$boxShadow: rgba(14, 30, 37, 0.33) 0px 2px 4px 0px,
+  rgba(14, 30, 37, 0.5) 0px 2px 16px 0px;
 $col: #cccccc;
 $colHi: #eeeeee;
+
 $border: 1px solid $col;
+ 
+$cursorPointer:  url(./resources/cursors/pointer.png) 12 12, pointer !important;
+$cursorNormal: url(./resources/cursors/normal.png) 12 12, auto !important;
+
 $fontSize: 10pt;
 $padding: 10px;
 $paddingSmall: 3px;
+
 * {
   margin: 0;
   border: 0;
@@ -14,8 +24,13 @@ $paddingSmall: 3px;
   vertical-align: baseline;
   background: transparent;
 }
+html {
+    cursor: $cursorNormal;
+}
 body {
-  background-color: $bg;
+  // background-color: $bg;
+  background-attachment: fixed;
+  background-image: url(./resources/bg.png);
   color: $col;
   font-family: monospace;
   font-size: $fontSize;
@@ -27,6 +42,11 @@ li {
   margin: 0;
   padding: $paddingSmall;
 }
+p,
+span,
+li {
+  cursor: url(./resources/cursors/text.png) 12 12, auto !important;
+}
 hr {
   $margin: calc($padding * 2);
   border: $border;
@@ -35,8 +55,9 @@ hr {
 input,
 button {
   border: $border;
+  border-radius: 0.5em;
   color: $col;
-  cursor: pointer;
+  cursor: $cursorPointer;
 }
 .centerForced {
   left: 50%;
@@ -68,19 +89,19 @@ button {
 .link:hover,
 .linkBold:hover {
   color: $colHi;
-  cursor: pointer;
+  cursor: $cursorPointer;
   text-decoration: underline;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SIDEBAR //
 .sidebar {
-  background-color: $bgHi;
-  border-right: 1px solid white;
+  background-color: $bgLessTrans;
+  box-shadow: $boxShadow;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  position: absolute;
+  position: fixed;
   left: 0;
-  min-height: 98vh;
+  min-height: 100vh;
   max-width: 25%;
   min-width: 8%;
   transition: 0.5s ease;
@@ -88,11 +109,11 @@ button {
 }
 .sidebarToggler {
   $offset: 10px;
-  cursor: pointer;
+  cursor: $cursorPointer;
   filter: brightness(0.33);
   height: 32px;
   left: $offset;
-  position: absolute;
+  position: fixed;
   top: $offset;
   width: 32px;
   transition: 0.2s ease;
@@ -108,6 +129,7 @@ button {
   aspect-ratio: 1;
   border: 2px solid white;
   border-radius: 999px;
+  box-shadow: $boxShadow;
   height: $size;
   margin: $margin 0 $margin 0;
   overflow: hidden;
@@ -162,9 +184,84 @@ li {
   width: 50%;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ POST //
+.explainer {
+  margin: 0 15vw 5vh 15vw;
+}
 .post {
+  background-color: $bgTrans;
+  border-radius: 1em;
+  box-shadow: $boxShadow;
+  margin: 0 15vw 15vh 15vw;
+  padding: calc($padding * 3);
+  transition: 1s ease-in-out;
+}
+.post:hover {
+  background-color: $bgLessTrans;
+}
+.titleBar {
+  align-items: center;
+  display: flex;
+  gap: calc($padding * 3);
+}
+.bulk {
+  align-items: center;
+  display: flex;
+  gap: 1vw;
+  justify-content: space-between;
+}
+.info {
+  $spc: calc($padding * 2);
+  align-self: flex-start;
+  // margin: 0 $spc 0 $spc;
+}
+.postTitle {
+  font-size: calc($fontSize * 4);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.previewGrid {
+  margin: $padding;
+}
+.previewImg {
+    align-self: flex-start;
+  aspect-ratio: 16 / 9;
   border: $border;
-  margin: 0 15vw 0 15vw;
+  border-radius: 0.5em;
+  box-shadow: $boxShadow;
+  cursor: url(./resources/cursors/zoomIn.png) 12 12, auto !important;
+  height: 100%;
+  max-width: 33%;
+  transition: 0.33s ease-in;
+}
+.previewImg:hover {
+  filter: brightness(1.5) saturate(125%);
+}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIALOG //
+.dialogImg {
+  border-radius: 1em;
+  box-shadow: $boxShadow;
+  cursor: $cursorNormal;
+  left: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.iconRight {
+  filter: brightness(1) !important;
+}
+.dialog {
+  height: 80vh;
+  width: 80vw;
+  position: fixed;
+}
+.dialogForm,
+.dialog::backdrop {
+  background-color: $bgLessTrans;
+  cursor: url(./resources/cursors/zoomOut.png) 12 12, auto !important;
+  z-index: -1;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEXGRID //
 .formLabel {
