@@ -11,7 +11,7 @@ export default function AnimatedIntro(props) {
       strings: [
         "Hi, I'm Alex, <br /><br /> I'm a junior full stack web developer",
       ],
-      typeSpeed: 50,
+      typeSpeed: 20,
     });
     return () => {
       typed.destroy();

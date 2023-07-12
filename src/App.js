@@ -6,6 +6,7 @@ import "./App.scss";
 import Content from "./data/content.json";
 
 import AnimatedIntro from "./components/animatedIntro";
+import HexGrid from "./components/hexgrid";
 import Homepage from "./components/homepage";
 import Section from "./components/section";
 import Sidebar from "./components/sidebar";
@@ -14,7 +15,7 @@ import { genRand } from "./functions/random";
 
 export default function App() {
   const [introOver, setIntroOver] = useState(false);
-  const routes = () => {
+  function routeMapper() {
     return Object.entries(Content.main).map((header) => {
       return (
         <Route
@@ -24,7 +25,8 @@ export default function App() {
         />
       );
     });
-  };
+  }
+  const mainContentRoutes = routeMapper();
   return (
     <>
       <Sidebar content={Content} />
@@ -41,7 +43,8 @@ export default function App() {
             )
           }
         />
-        {routes()}
+        {mainContentRoutes}
+        <Route path="/playground" element={<HexGrid />} />
       </Routes>
     </>
   );

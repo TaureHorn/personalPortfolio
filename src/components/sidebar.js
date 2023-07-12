@@ -8,7 +8,7 @@ import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
 
 export default function Sidebar(props) {
-  const [sidebarVisibility, toggleSidebarVisibility] = useState(false);
+  const [sidebarVisibility, toggleSidebarVisibility] = useState(true);
   const sidebar = props.content.sidebar;
 
   function linkMapper(json) {
@@ -83,6 +83,9 @@ export default function Sidebar(props) {
         </div>
         <hr />
         {sectionMapper()}
+        <a className="link" href="/playground">
+          <p className="header link">playground</p>
+        </a>
         <hr />
         <p className="header"> External Links</p>
         {linkMapper(sidebar.externalLinks)}
