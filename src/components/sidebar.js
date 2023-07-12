@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
+// media
 import SidebarCloser from "../resources/icons/sidebarCloser.svg";
 import SidebarOpener from "../resources/icons/sidebarOpener.svg";
-
+// custom functions
 import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
 
 export default function Sidebar(props) {
-  const navigate = useNavigate();
-  const [sidebarVisibility, toggleSidebarVisibility] = useState(true);
+  const [sidebarVisibility, toggleSidebarVisibility] = useState(false);
   const sidebar = props.content.sidebar;
 
   function linkMapper(json) {
@@ -43,14 +42,17 @@ export default function Sidebar(props) {
           </a>
           <ul className="list subheader">
             {header[1].data.map((subsection) => {
-              const name = catString(subsection.name, "-");
-              const link = `${header[1].metadata.url}#${name}`;
               return (
-                <div key={genRand(3)}>
-                  <a className="link noPadding" href={link}>
-                    <li className="link">{subsection.name}</li>
-                  </a>
-                </div>
+                <a
+                  key={genRand(3)}
+                  className="link noPadding"
+                  href={`${header[1].metadata.url}#${catString(
+                    subsection.name,
+                    "-"
+                  )}`}
+                >
+                  <li className="link">{subsection.name}</li>
+                </a>
               );
             })}
           </ul>

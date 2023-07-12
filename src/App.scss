@@ -36,6 +36,7 @@ input,
 button {
   border: $border;
   color: $col;
+  cursor: pointer;
 }
 .centerForced {
   left: 50%;
@@ -56,11 +57,16 @@ button {
   height: 24px;
   width: 24px;
 }
-.link {
+.link,
+.linkBold {
   color: $col;
   text-decoration: none;
 }
-.link:hover {
+.linkBold {
+  font-weight: bold !important;
+}
+.link:hover,
+.linkBold:hover {
   color: $colHi;
   cursor: pointer;
   text-decoration: underline;
@@ -133,8 +139,12 @@ button {
   gap: 10px;
 }
 ul {
-  margin: 0 0 15px 0;
+  padding-left: calc($padding * 2);
 }
+li {
+  list-style: none;
+}
+
 .list li {
   text-transform: lowercase;
 }
@@ -150,6 +160,11 @@ ul {
   top: 30%;
   transform: translate(-50%, -50%);
   width: 50%;
+}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ POST //
+.post {
+  border: $border;
+  margin: 0 15vw 0 15vw;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEXGRID //
 .formLabel {
