@@ -19,20 +19,19 @@ export function skillsMapper(data) {
   return data.map((skill) => {
     const details = detailsFinder(skill);
     return (
-      <a href={details.href} target="_blank" rel="noreferrer">
+      <a key={genRand(4)} href={details.href} target="_blank" rel="noreferrer">
         <img
           src={details.icon}
-          className="skillIcon"
+          className="skillIcon skillIconPost"
           alt={skill}
           title={skill}
-          key={genRand(3)}
         />
       </a>
     );
   });
 }
 
-function detailsFinder(skill) {
+export function detailsFinder(skill) {
   let icon = "";
   let href = "";
   switch (skill) {
@@ -97,5 +96,5 @@ function detailsFinder(skill) {
     default:
       console.log("incorrect assignment");
   }
-  return { icon: icon, href: href }
+  return { icon: icon, href: href };
 }

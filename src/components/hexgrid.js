@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { hexArrayAssembler } from "../functions/random";
 
 import Info from "../resources/icons/info.svg";
 
 export default function HexGrid() {
+    const params = useParams()
+    console.log(params)
   function declareHexVariables(e) {
     e.preventDefault();
     setGridVariables({

@@ -26,7 +26,7 @@ export default function Section(props) {
   const element = useRef(null);
   useEffect(() => {
     const typed = new Typed(element.current, {
-        showCursor: false,
+      showCursor: false,
       strings: [props.content.metadata.explainer],
       typeSpeed: 1,
     });
@@ -35,7 +35,7 @@ export default function Section(props) {
     };
   }, []);
 
-  function posts() {
+  function postMapper() {
     return props.content.data.map((post, index) => {
       return (
         <Post
@@ -48,6 +48,7 @@ export default function Section(props) {
       );
     });
   }
+  const posts = postMapper();
   return (
     <>
       <form method="dialog" className="dialogForm">
@@ -58,7 +59,7 @@ export default function Section(props) {
       <div className="explainer">
         <p className="typedText" ref={element} />
       </div>
-      {posts()}
+      {posts}
     </>
   );
 }

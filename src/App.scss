@@ -39,6 +39,7 @@ body {
 }
 p,
 a,
+label,
 li {
   color: $col;
   margin: 0;
@@ -102,6 +103,7 @@ button:focus {
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SIDEBAR //
 .sidebar {
+  backdrop-filter: blur(10px);
   background-color: $bgTrans;
   box-shadow: $boxShadow;
   display: flex;
@@ -115,18 +117,27 @@ button:focus {
   transition: 0.5s ease;
   z-index: 2;
 }
+.skillsToggler,
 .sidebarToggler {
-  $offset: 10px;
   cursor: $cursorPointer;
   filter: brightness(0.33);
   height: 32px;
-  left: $offset;
   position: fixed;
-  top: $offset;
   width: 32px;
   transition: 0.2s ease;
   z-index: 3;
 }
+.skillsToggler {
+  right: 0;
+  top: 50%;
+}
+.sidebarToggler {
+  $offset: 10px;
+  left: $offset;
+  top: $offset;
+}
+.skillsToggler:hover,
+.skillsToggler:active,
 .sidebarToggler:hover,
 .sidebarToggler:active {
   filter: brightness(1);
@@ -178,6 +189,36 @@ li {
 .list li {
   text-transform: lowercase;
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SKILLS SIDEBAR //
+.skillsSidebar {
+  backdrop-filter: blur(10px);
+  background: $bgTrans;
+  border-radius: 1em;
+  padding: $padding;
+  position: fixed;
+  right: 1%;
+  text-align: center;
+  top: 50%;
+  transform: translate(0%, -50%);
+  width: 6vw;
+}
+.skillItem {
+  cursor: $cursorPointer !important;
+  margin: $padding 0 $padding 0;
+}
+.skillButton {
+  align-items: center;
+  background: none !important;
+  // border: none;
+  display: flex;
+  gap: $padding;
+  padding: $paddingSmall !important;
+  width: 100%;
+}
+.skillButton:hover,
+.skillButton:active {
+  background-color: black !important;
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ANIMATED INTRO //
 .typedText {
   $size: calc($fontSize * 4);
@@ -196,9 +237,8 @@ li {
   margin: 0 15vw 5vh 15vw;
 }
 .post {
-  // background-color: $bgTrans;
+  backdrop-filter: blur(10px);
   border-radius: 1em;
-  // box-shadow: $boxShadow;
   margin: 0 15vw 15vh 15vw;
   padding: calc($padding * 3);
   transition: 1s ease-in-out;
@@ -216,13 +256,15 @@ li {
 }
 .skillIcon {
   $size: calc($iconSize * 1.5);
-  margin-left: calc($padding * 2);
   height: $size;
   width: $size;
   transition: 0.25s ease-in-out;
 }
-.skillIcon:hover {
-  transform: scale(1.5);
+.skillIconPost {
+  margin-left: calc($padding * 2);
+}
+.skillIconBar {
+  margin: $paddingSmall;
 }
 .bulk {
   align-items: center;
@@ -277,6 +319,7 @@ li {
 }
 .dialogForm,
 .dialog::backdrop {
+  backdrop-filter: blur(3px);
   background-color: $bgLessTrans;
   cursor: url(./resources/cursors/zoomOut.png) 12 12, auto !important;
   z-index: -1;

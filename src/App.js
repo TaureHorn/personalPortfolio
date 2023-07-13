@@ -10,6 +10,7 @@ import HexGrid from "./components/hexgrid";
 import Homepage from "./components/homepage";
 import Section from "./components/section";
 import Sidebar from "./components/sidebar";
+import SkillsBar from "./components/skillsBar";
 
 import { genRand } from "./functions/random";
 
@@ -27,9 +28,16 @@ export default function App() {
     });
   }
   const mainContentRoutes = routeMapper();
+  const [skillSpecificContent, setSkillSpecificContent] = useState("");
   return (
     <>
       <Sidebar content={Content} />
+      <SkillsBar
+        content={Content}
+        specify={(skillSpecificContent) =>
+          setSkillSpecificContent(skillSpecificContent)
+        }
+      />
       <Routes>
         <Route
           path="/"
@@ -44,7 +52,11 @@ export default function App() {
           }
         />
         {mainContentRoutes}
-        <Route path="/playground" element={<HexGrid />} />
+        <Route path="/playground/" element={<HexGrid />} />
+        <Route
+          path="/skills/:skill"
+          element={<Section content={skillSpecificContent} />}
+        />
       </Routes>
     </>
   );

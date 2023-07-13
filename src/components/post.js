@@ -45,7 +45,7 @@ export default function Post(props) {
             return (
               <img
                 src={image}
-                key={genRand(2)}
+                key={genRand(4)}
                 className="previewImg previewGrid"
                 alt={`${image.toLowerCase()} preview screenshot`}
                 title={`${image.toLowerCase()} screenshot preview`}
