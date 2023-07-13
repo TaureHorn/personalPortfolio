@@ -1,5 +1,6 @@
 import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
+import { skillsMapper } from "../functions/skillsMapper";
 
 export default function Post(props) {
   function info() {
@@ -76,26 +77,35 @@ export default function Post(props) {
   return (
     <>
       <div className="post">
-        <div className="titleBar">
-          <p id={catString(props.data.name, "-")} className="postTitle">
-            {props.data.name}
-          </p>
-          {props.data.url ? (
-            <a
-              href={props.data.url}
-              className="linkBold"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <button className="linkBold padding">Site</button>
-            </a>
-          ) : (
-            <></>
-          )}
-          {props.data.repo ? (
-            <a href={props.data.repo} target="_blank" rel="noreferrer">
-              <button className="linkBold padding">Github repo</button>
-            </a>
+        <div className="titleBar spacer">
+          <div id="name+links" className="titleBar">
+            <p id={catString(props.data.name, "-")} className="postTitle">
+              {props.data.name}
+            </p>
+            {props.data.url ? (
+              <a
+                href={props.data.url}
+                className="linkBold"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="linkBold padding">Site</button>
+              </a>
+            ) : (
+              <></>
+            )}
+            {props.data.repo ? (
+              <a href={props.data.repo} target="_blank" rel="noreferrer">
+                <button className="linkBold padding">Github repo</button>
+              </a>
+            ) : (
+              <></>
+            )}
+          </div>
+          {props.data.skills ? (
+            <>
+              <div id="skills">{skillsMapper(props.data.skills)}</div>
+            </>
           ) : (
             <></>
           )}

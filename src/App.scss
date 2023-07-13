@@ -4,17 +4,19 @@ $bgTrans: rgba(0, 0, 0, 0.33);
 $bgLessTrans: rgba(0, 0, 0, 0.66);
 $boxShadow: rgba(14, 30, 37, 0.33) 0px 2px 4px 0px,
   rgba(14, 30, 37, 0.5) 0px 2px 16px 0px;
-$col: #cccccc;
-$colHi: #eeeeee;
+$col: #eeeeee;
+$colHi: #ffffff;
 
 $border: 1px solid $col;
- 
-$cursorPointer:  url(./resources/cursors/pointer.png) 12 12, pointer !important;
+
+$cursorPointer: url(./resources/cursors/pointer.png) 12 12, pointer !important;
 $cursorNormal: url(./resources/cursors/normal.png) 12 12, auto !important;
 
 $fontSize: 10pt;
 $padding: 10px;
 $paddingSmall: 3px;
+
+$iconSize: 24px;
 
 * {
   margin: 0;
@@ -25,12 +27,12 @@ $paddingSmall: 3px;
   background: transparent;
 }
 html {
-    cursor: $cursorNormal;
+  cursor: $cursorNormal;
 }
 body {
-  // background-color: $bg;
   background-attachment: fixed;
   background-image: url(./resources/bg.png);
+  cursor: $cursorNormal;
   color: $col;
   font-family: monospace;
   font-size: $fontSize;
@@ -54,10 +56,16 @@ hr {
 }
 input,
 button {
+  background-color: $bgTrans;
   border: $border;
   border-radius: 0.5em;
   color: $col;
   cursor: $cursorPointer;
+  text-transform: uppercase;
+}
+button:active,
+button:focus {
+  background-color: $bgLessTrans;
 }
 .centerForced {
   left: 50%;
@@ -75,8 +83,8 @@ button {
   text-align: center;
 }
 .icon {
-  height: 24px;
-  width: 24px;
+  height: $iconSize;
+  width: $iconSize;
 }
 .link,
 .linkBold {
@@ -94,7 +102,7 @@ button {
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SIDEBAR //
 .sidebar {
-  background-color: $bgLessTrans;
+  background-color: $bgTrans;
   box-shadow: $boxShadow;
   display: flex;
   flex-direction: column;
@@ -188,20 +196,33 @@ li {
   margin: 0 15vw 5vh 15vw;
 }
 .post {
-  background-color: $bgTrans;
+  // background-color: $bgTrans;
   border-radius: 1em;
-  box-shadow: $boxShadow;
+  // box-shadow: $boxShadow;
   margin: 0 15vw 15vh 15vw;
   padding: calc($padding * 3);
   transition: 1s ease-in-out;
 }
 .post:hover {
-  background-color: $bgLessTrans;
+  background-color: $bgTrans;
 }
 .titleBar {
   align-items: center;
   display: flex;
   gap: calc($padding * 3);
+}
+.spacer {
+  justify-content: space-between;
+}
+.skillIcon {
+  $size: calc($iconSize * 1.5);
+  margin-left: calc($padding * 2);
+  height: $size;
+  width: $size;
+  transition: 0.25s ease-in-out;
+}
+.skillIcon:hover {
+  transform: scale(1.5);
 }
 .bulk {
   align-items: center;
@@ -210,9 +231,7 @@ li {
   justify-content: space-between;
 }
 .info {
-  $spc: calc($padding * 2);
   align-self: flex-start;
-  // margin: 0 $spc 0 $spc;
 }
 .postTitle {
   font-size: calc($fontSize * 4);
@@ -223,11 +242,10 @@ li {
   margin: $padding;
 }
 .previewImg {
-    align-self: flex-start;
+  align-self: flex-start;
   aspect-ratio: 16 / 9;
   border: $border;
   border-radius: 0.5em;
-  box-shadow: $boxShadow;
   cursor: url(./resources/cursors/zoomIn.png) 12 12, auto !important;
   height: 100%;
   max-width: 33%;
