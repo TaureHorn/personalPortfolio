@@ -10,6 +10,9 @@ export default function Post(props) {
           {props.data.info ? (
             <div
               style={{ textAlign: "justify" }}
+              // TODO
+              // find a replacement for dangerouslySetInnerHTML
+              // TODO
               dangerouslySetInnerHTML={{ __html: props.data.info }}
             ></div>
           ) : (
@@ -89,14 +92,14 @@ export default function Post(props) {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button className="linkBold padding">Site</button>
+                <button className="linkBold postButton">Site</button>
               </a>
             ) : (
               <></>
             )}
             {props.data.repo ? (
               <a href={props.data.repo} target="_blank" rel="noreferrer">
-                <button className="linkBold padding">Github repo</button>
+                <button className="linkBold postButton">Github repo</button>
               </a>
             ) : (
               <></>
