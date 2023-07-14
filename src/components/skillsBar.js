@@ -1,18 +1,20 @@
 import { useState } from "react";
 
+import Content from "../data/content.json";
+
 import { detailsFinder } from "../functions/skillsMapper";
 import { genRand } from "../functions/random";
 
 import Arrow from "../resources/icons/arrow.svg";
 
-export default function SkillsBar(props) {
+export default function SkillsBar() {
   const [skillsBarVisiblity, toggleSkillsBarVisibility] = useState(true);
   return skillsBarVisiblity ? (
     <>
       <img
         src={Arrow}
         className="skillsToggler"
-        style={{ transform: "scale(-1, -1)" }}
+        style={{ transform: "rotate(180deg)" }}
         alt="skills sidebar closer"
         title="skills sidebar closer"
         onClick={() => toggleSkillsBarVisibility(false)}
@@ -20,7 +22,7 @@ export default function SkillsBar(props) {
       <div className="skillsSidebar">
         <p className="header">Skills</p>
         <p>glossary/links</p>
-        {props.skillList.map((skill) => {
+        {Content.skillsSidebar.skillList.map((skill) => {
           const details = detailsFinder(skill);
           return (
             <div className="skillItem" key={genRand(3)}>

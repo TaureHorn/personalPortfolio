@@ -108,7 +108,7 @@ export default function Sidebar(props) {
     <>
       <img
         src={Arrow}
-        style={{ transform: "scale(-1, -1)" }}
+        style={{ transform: "rotate(180deg)" }}
         className="sidebarToggler"
         alt="sidebar opener"
         title="open sidebar"

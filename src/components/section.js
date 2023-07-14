@@ -4,6 +4,7 @@ import Typed from "typed.js";
 import { genRand } from "../functions/random";
 
 import Post from "./post";
+import SkillsBar from "./skillsBar";
 
 export default function Section(props) {
   const modalID = genRand(6);
@@ -60,6 +61,7 @@ export default function Section(props) {
         <p className="sectionText typedText" ref={element} />
       </div>
       {posts}
+      <SkillsBar />
     </>
   );
 }

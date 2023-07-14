@@ -7,7 +7,6 @@ import Content from "./data/content.json";
 import AnimatedIntro from "./components/animatedIntro";
 import Section from "./components/section";
 import Sidebar from "./components/sidebar";
-import SkillsBar from "./components/skillsBar";
 
 export default function App() {
   const [activeElement, updateActiveElement] = useState(<AnimatedIntro />);
@@ -23,7 +22,6 @@ export default function App() {
         setElement={(activeElement) => updateActiveElement(activeElement)}
       />
       {activeElement}
-      <SkillsBar skillList={Content.skillsSidebar.skillList} />
     </>
   );
 }

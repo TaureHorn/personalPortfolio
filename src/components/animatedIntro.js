@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
-export default function AnimatedIntro(props) {
+export default function AnimatedIntro() {
   const element = useRef(null);
   useEffect(() => {
     const typed = new Typed(element.current, {
@@ -9,7 +9,6 @@ export default function AnimatedIntro(props) {
       smartBackspace: true,
       strings: [
         "Hi, I'm Alex, <br /><br /> I'm a junior full stack web developer.",
-        "<<<<< Links to my projects on the left<br /><br />Tech I've used on the right >>>>>",
       ],
       typeSpeed: 20,
     });
