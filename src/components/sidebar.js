@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 // media
-import SidebarCloser from "../resources/icons/sidebarCloser.svg";
-import SidebarOpener from "../resources/icons/sidebarOpener.svg";
+import Arrow from "../resources/icons/arrow.svg";
 // custom functions
 import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
@@ -22,12 +21,12 @@ export default function Sidebar(props) {
             title={link.text}
           />
           <a
-            className="link subheader"
+            className="subheader"
             href={link.url}
             rel="noreferrer"
             target="_blank"
           >
-            {link.text}
+            <button className="skillButton">{link.text}</button>
           </a>
         </div>
       );
@@ -37,21 +36,24 @@ export default function Sidebar(props) {
     return Object.entries(props.content.main).map((header) => {
       return (
         <div key={genRand(4)}>
-          <a className="link" href={header[1].metadata.url}>
-            <p className="header link">{header[0]}</p>
+          <a href={header[1].metadata.url}>
+            <button className="skillButton">
+              <p className="header">{header[0]}</p>
+            </button>
           </a>
           <ul className="list subheader">
             {header[1].data.map((subsection) => {
               return (
                 <a
                   key={genRand(3)}
-                  className="link noPadding"
                   href={`${header[1].metadata.url}#${catString(
                     subsection.name,
                     "-"
                   )}`}
                 >
-                  <li className="link">{subsection.name}</li>
+                  <button className="skillButton">
+                    <li>{subsection.name}</li>
+                  </button>
                 </a>
               );
             })}
@@ -63,13 +65,13 @@ export default function Sidebar(props) {
   return sidebarVisibility ? (
     <>
       <img
-        src={SidebarCloser}
+        src={Arrow}
         className="sidebarToggler"
         alt="sidebar closer"
         title="close sidebar"
         onClick={() => toggleSidebarVisibility(false)}
       />
-      <div className="padding sidebar">
+      <div className=" sidebar">
         <div className="center">
           <img
             src={sidebar.headshot}
@@ -83,8 +85,10 @@ export default function Sidebar(props) {
         </div>
         <hr />
         {sectionMapper()}
-        <a className="link" href="/playground">
-          <p className="header link">playground</p>
+        <a href="/playground">
+          <button className="skillButton">
+            <p className="header">playground</p>
+          </button>
         </a>
         <hr />
         <p className="header"> External Links</p>
@@ -94,7 +98,8 @@ export default function Sidebar(props) {
   ) : (
     <>
       <img
-        src={SidebarOpener}
+        src={Arrow}
+        style={{ transform: "scale(-1, -1)" }}
         className="sidebarToggler"
         alt="sidebar opener"
         title="open sidebar"
