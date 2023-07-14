@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 
-
 export default function AnimatedIntro(props) {
   const element = useRef(null);
   useEffect(() => {
@@ -9,7 +8,8 @@ export default function AnimatedIntro(props) {
       showCursor: false,
       smartBackspace: true,
       strings: [
-        "Hi, I'm Alex, <br /><br /> I'm a junior full stack web developer",
+        "Hi, I'm Alex, <br /><br /> I'm a junior full stack web developer.",
+        "<<<<< Links to my projects on the left<br /><br />Tech I've used on the right >>>>>",
       ],
       typeSpeed: 20,
     });
@@ -21,7 +21,7 @@ export default function AnimatedIntro(props) {
   return (
     <>
       <div id="typedText" className="centreText">
-        <p className="typedText" ref={element} />
+        <p className="introText typedText" ref={element} />
       </div>
     </>
   );

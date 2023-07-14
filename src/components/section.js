@@ -28,7 +28,7 @@ export default function Section(props) {
     const typed = new Typed(element.current, {
       showCursor: false,
       strings: [props.content.metadata.explainer],
-      typeSpeed: 1,
+      typeSpeed: 10,
     });
     return () => {
       typed.destroy();
@@ -57,7 +57,7 @@ export default function Section(props) {
         </dialog>
       </form>
       <div className="explainer">
-        <p className="typedText" ref={element} />
+        <p className="sectionText typedText" ref={element} />
       </div>
       {posts}
     </>

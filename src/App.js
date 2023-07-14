@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.scss";
@@ -28,15 +28,11 @@ export default function App() {
     });
   }
   const mainContentRoutes = routeMapper();
-  const [skillSpecificContent, setSkillSpecificContent] = useState("");
   return (
     <>
       <Sidebar content={Content} />
       <SkillsBar
-        content={Content}
-        specify={(skillSpecificContent) =>
-          setSkillSpecificContent(skillSpecificContent)
-        }
+        skillList={Content.skillsSidebar.skillList}
       />
       <Routes>
         <Route
@@ -53,10 +49,6 @@ export default function App() {
         />
         {mainContentRoutes}
         <Route path="/playground/" element={<HexGrid />} />
-        <Route
-          path="/skills/:skill"
-          element={<Section content={skillSpecificContent} />}
-        />
       </Routes>
     </>
   );

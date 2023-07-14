@@ -7,13 +7,6 @@ import Arrow from "../resources/icons/arrow.svg";
 
 export default function SkillsBar(props) {
   const [skillsBarVisiblity, toggleSkillsBarVisibility] = useState(true);
-  const skills = props.content.skillsSidebar;
-
-  function skillSelect(skill) {
-      console.log(skill)
-      console.log(props.content)
-  }
-
   return skillsBarVisiblity ? (
     <>
       <img
@@ -26,27 +19,22 @@ export default function SkillsBar(props) {
       />
       <div className="skillsSidebar">
         <p className="header">Skills</p>
-        <p>
-          Click on an item to be shown projects that I have made utilising that
-          technology
-        </p>
-        <br />
-        {skills.skillList.map((skill) => {
+        <p>glossary/links</p>
+        {props.skillList.map((skill) => {
           const details = detailsFinder(skill);
           return (
             <div className="skillItem" key={genRand(3)}>
-              <button
-                className="skillButton"
-                onClick={() => skillSelect(skill)}
-              >
-                <img
-                  src={details.icon}
-                  className="skillIcon skillIconBar"
-                  alt={skill}
-                  title={skill}
-                />
-                <p>{skill}</p>
-              </button>
+              <a href={details.href} target="_blank" rel="noreferrer">
+                <button className="skillButton">
+                  <img
+                    src={details.icon}
+                    className="skillIconBar"
+                    alt={skill}
+                    title={skill}
+                  />
+                  <p>{skill}</p>
+                </button>
+              </a>
             </div>
           );
         })}
