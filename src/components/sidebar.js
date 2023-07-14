@@ -45,7 +45,7 @@ export default function Sidebar(props) {
               className="skillButton"
               onClick={() => props.move(header[1])}
             >
-              <p className="header">{header[0]}</p>
+              <span className="header">{header[0]}</span>
             </button>
             {header[1].data.length > 0 ? (
               <>
@@ -97,7 +97,7 @@ export default function Sidebar(props) {
         <hr />
         {sectionMapper()}
           <button className="skillButton" onClick={() => props.setElement(<HexGrid />)}>
-            <p className="header">playground</p>
+            <span className="header">playground</span>
           </button>
         <hr />
         <p className="header"> External Links</p>
