@@ -1,8 +1,11 @@
+import DOMpurify from "dompurify";
+
 import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
 import { skillsMapper } from "../functions/skillsMapper";
 
 export default function Post(props) {
+  const postText = DOMpurify.sanitize(props.data.info);
   function info() {
     return (
       <>
@@ -10,10 +13,7 @@ export default function Post(props) {
           {props.data.info ? (
             <div
               style={{ textAlign: "justify" }}
-              // TODO
-              // find a replacement for dangerouslySetInnerHTML
-              // TODO
-              dangerouslySetInnerHTML={{ __html: props.data.info }}
+              dangerouslySetInnerHTML={{ __html: postText }}
             ></div>
           ) : (
             <></>
@@ -82,9 +82,9 @@ export default function Post(props) {
       <div className="post">
         <div className="titleBar spacer">
           <div id="name+links" className="titleBar">
-            <p id={catString(props.data.name, "-")} className="postTitle">
+            <span id={catString(props.data.name, "-")} className="postTitle">
               {props.data.name}
-            </p>
+            </span>
             {props.data.url ? (
               <a
                 href={props.data.url}

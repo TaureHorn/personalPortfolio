@@ -19,7 +19,7 @@ $cursorZoomOut: url(./resources/cursors/zoomOut.png) 12 12, zoom-out !important;
 
 // TODO add media dependent variables
 @media all and (max-height: 900px) {
-    $col: red;
+  $col: red;
   $fontSize: 8pt;
   $padding: 5px;
   $paddingSmall: 2px;
@@ -61,7 +61,8 @@ body {
 p,
 a,
 label,
-li {
+li,
+span {
   color: $col;
   font-family: monospace;
   font-size: $fontSize;
@@ -72,12 +73,18 @@ label,
 li {
   cursor: $cursorText;
 }
+p {
+  margin: $padding 0 $padding 0;
+}
 a {
   text-decoration: none;
 }
 hr {
   border: 1px solid $colLo;
   margin: $padding 0 $padding 0;
+}
+.dashedLine {
+  border: 1px dashed $colLo;
 }
 button,
 input {

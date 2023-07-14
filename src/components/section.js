@@ -58,7 +58,7 @@ export default function Section(props) {
         </dialog>
       </form>
       <div className="explainer">
-        <p className="sectionText typedText" ref={element} />
+        <span className="sectionText typedText" ref={element} />
       </div>
       {posts}
       <SkillsBar />
