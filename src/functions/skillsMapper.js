@@ -19,14 +19,13 @@ export function skillsMapper(data) {
   return data.map((skill) => {
     const details = detailsFinder(skill);
     return (
-      <a key={genRand(4)} href={details.href} target="_blank" rel="noreferrer">
-        <img
-          src={details.icon}
-          className="skillIcon skillIconPost"
-          alt={skill}
-          title={skill}
-        />
-      </a>
+      <img
+        src={details.icon}
+        className="skillIcon skillIconPost"
+        key={genRand(4)}
+        alt={skill}
+        title={skill}
+      />
     );
   });
 }
