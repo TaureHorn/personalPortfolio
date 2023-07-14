@@ -28,7 +28,7 @@ export default function SkillsBar(props) {
                 <button className="skillButton">
                   <img
                     src={details.icon}
-                    className="skillIconBar"
+                    className="skillIcon"
                     alt={skill}
                     title={skill}
                   />

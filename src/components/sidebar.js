@@ -14,19 +14,21 @@ export default function Sidebar(props) {
     return json.map((link) => {
       return (
         <div className="linkContainer" key={genRand(4)}>
-          <img
-            src={link.icon}
-            className="icon"
-            alt={link.text}
-            title={link.text}
-          />
           <a
             className="subheader"
             href={link.url}
             rel="noreferrer"
             target="_blank"
           >
-            <button className="skillButton">{link.text}</button>
+            <button className="skillButton">
+              <img
+                src={link.icon}
+                className="icon"
+                alt={link.text}
+                title={link.text}
+              />
+              <p>{link.text}</p>
+            </button>
           </a>
         </div>
       );
@@ -41,23 +43,29 @@ export default function Sidebar(props) {
               <p className="header">{header[0]}</p>
             </button>
           </a>
-          <ul className="list subheader">
-            {header[1].data.map((subsection) => {
-              return (
-                <a
-                  key={genRand(3)}
-                  href={`${header[1].metadata.url}#${catString(
-                    subsection.name,
-                    "-"
-                  )}`}
-                >
-                  <button className="skillButton">
-                    <li>{subsection.name}</li>
-                  </button>
-                </a>
-              );
-            })}
-          </ul>
+          {header[1].data.length > 0 ? (
+            <>
+              <ul className="list padding subheader">
+                {header[1].data.map((subsection) => {
+                  return (
+                    <a
+                      key={genRand(3)}
+                      href={`${header[1].metadata.url}#${catString(
+                        subsection.name,
+                        "-"
+                      )}`}
+                    >
+                      <button className="skillButton">
+                        <li>{subsection.name}</li>
+                      </button>
+                    </a>
+                  );
+                })}
+              </ul>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       );
     });
@@ -72,7 +80,7 @@ export default function Sidebar(props) {
         onClick={() => toggleSidebarVisibility(false)}
       />
       <div className=" sidebar">
-        <div className="center">
+        <div className="textCenter">
           <img
             src={sidebar.headshot}
             className="headshot"
@@ -81,7 +89,7 @@ export default function Sidebar(props) {
           />
           <p className="name">Alex Baird</p>
           <p className="subheader">full stack junior web developer</p>
-          <div className="externalLinks">{linkMapper(sidebar.links)}</div>
+          <div className="linkContainer">{linkMapper(sidebar.links)}</div>
         </div>
         <hr />
         {sectionMapper()}

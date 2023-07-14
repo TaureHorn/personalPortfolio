@@ -20,8 +20,8 @@ export default function AnimatedIntro(props) {
 
   return (
     <>
-      <div id="typedText" className="centreText">
-        <p className="introText typedText" ref={element} />
+      <div id="typedText" className="centerText">
+        <p className="centerForced introText typedText" ref={element} />
       </div>
     </>
   );
