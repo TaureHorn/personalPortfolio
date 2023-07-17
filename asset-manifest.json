@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d3ec7440.css",
+    "main.js": "/static/js/main.9d252f7d.js",
+    "static/js/787.ae039102.chunk.js": "/static/js/787.ae039102.chunk.js",
+    "static/media/bg.png": "/static/media/bg.46ec7e5916e57804d6ab.png",
+    "static/media/sass.svg": "/static/media/sass.cfbf049f3270e03886e5106db276311a.svg",
+    "static/media/bash.svg": "/static/media/bash.eb25ff5c248ed8488ff8674940100824.svg",
+    "static/media/react.svg": "/static/media/react.06e92a47a3f75a404838d29b226e524b.svg",
+    "static/media/json.svg": "/static/media/json.c548e8a004751d8743c990efad20d750.svg",
+    "static/media/lua.svg": "/static/media/lua.5e959996a3caa667776b7e374b1665fa.svg",
+    "static/media/javascript.svg": "/static/media/javascript.4fa76932982fa29f6092207968565da4.svg",
+    "static/media/bootstrap.svg": "/static/media/bootstrap.16da930e82b6956ca008bc890c4f1180.svg",
+    "static/media/html.svg": "/static/media/html.67218e13e32eb5c0db76eae17c24d04e.svg",
+    "static/media/docker.svg": "/static/media/docker.a44dfc5e039ceafb22bb232d34363fda.svg",
+    "static/media/info.svg": "/static/media/info.4c25e9030e1596cce50453caae831def.svg",
+    "static/media/mongodb.svg": "/static/media/mongodb.5a66b630f3df9b421dee5127c6c33a1f.svg",
+    "static/media/express.svg": "/static/media/express.3c09be4aca8267bdb72bca464819e934.svg",
+    "static/media/css.svg": "/static/media/css.efaf1ffd43d24d4aadc8fed588c49c5d.svg",
+    "static/media/arrow.svg": "/static/media/arrow.a98fa83807a792983022c1155b424c50.svg",
+    "static/media/tailwind.svg": "/static/media/tailwind.32e2d8d87f3ea9a31d62d1664e859046.svg",
+    "static/media/nvim.svg": "/static/media/nvim.4d6f0318588f392841df44b8337c7444.svg",
+    "index.html": "/index.html",
+    "main.d3ec7440.css.map": "/static/css/main.d3ec7440.css.map",
+    "main.9d252f7d.js.map": "/static/js/main.9d252f7d.js.map",
+    "787.ae039102.chunk.js.map": "/static/js/787.ae039102.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3ec7440.css",
+    "static/js/main.9d252f7d.js"
+  ]
+}
