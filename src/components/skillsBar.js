@@ -20,8 +20,8 @@ export default function SkillsBar() {
         onClick={() => toggleSkillsBarVisibility(false)}
       />
       <div className="skillsSidebar">
-        <p className="header">Skills</p>
-        <p>glossary/links</p>
+        <span className="header">technologies</span>
+        <span>glossary/links</span>
         {Content.skillsSidebar.skillList.map((skill) => {
           const details = detailsFinder(skill);
           return (
@@ -34,7 +34,7 @@ export default function SkillsBar() {
                     alt={skill}
                     title={skill}
                   />
-                  <p>{skill}</p>
+                  <span>{skill}</span>
                 </button>
               </a>
             </div>

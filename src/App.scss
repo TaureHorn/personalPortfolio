@@ -17,16 +17,7 @@ $cursorText: url(./resources/cursors/text.png) 12 12, auto !important;
 $cursorZoomIn: url(./resources/cursors/zoomIn.png) 12 12, zoom-in !important;
 $cursorZoomOut: url(./resources/cursors/zoomOut.png) 12 12, zoom-out !important;
 
-// TODO add media dependent variables
-@media all and (max-height: 900px) {
-  $col: red;
-  $fontSize: 8pt;
-  $padding: 5px;
-  $paddingSmall: 2px;
-  $iconSize: 16px;
-  $sidebarOffset: 0.5vw;
-  $pageSpacing: 10vh;
-}
+// ~~~~~~~~~~~ size
 $fontSize: 10pt;
 $fontSizeBig: calc($fontSize * 2.5);
 
@@ -38,7 +29,8 @@ $paddingSmall: 3px;
 $pageMargins: 20vw;
 $pageSpacing: 15vh;
 $sidebarOffset: 1.25vw;
-// TODO ///
+// ~~~~~~~~~~~ /size
+
 $transitionFast: 0.2s ease-in-out;
 $transitionSlow: 1s ease-in;
 
@@ -74,7 +66,7 @@ li {
   cursor: $cursorText;
 }
 p {
-  margin: $padding 0 $padding 0;
+  margin-bottom: $padding;
 }
 a {
   text-decoration: none;
@@ -220,11 +212,9 @@ li {
 .linkContainer {
   align-items: center;
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: $padding;
-}
-.linkCenterer {
-  margin: $padding 33% $padding 33%;
 }
 .list li {
   text-transform: lowercase;
@@ -243,8 +233,20 @@ li {
   width: 100%;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ POST //
+.sectionTitle,
+.postTitle {
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.sectionTitle {
+  font-size: calc($fontSize * 4);
+  text-align: center;
+}
+.postTitle {
+  font-size: $fontSizeBig;
+}
 .explainer {
-  margin: 0 $pageMargins calc($pageSpacing * 0.33) $pageMargins;
+  margin: 0 $pageMargins 0 $pageMargins;
   padding: calc($padding * 4);
 }
 .post {
@@ -288,11 +290,7 @@ li {
 .info {
   align-self: flex-start;
 }
-.postTitle {
-  font-size: $fontSizeBig;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
+
 .previewImg {
   align-self: flex-start;
   aspect-ratio: 16 / 9;
