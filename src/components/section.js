@@ -54,9 +54,10 @@ export default function Section(props) {
     <>
       <form method="dialog" className="dialogForm">
         <dialog closed="true" id={modalID} className="centerForced dialog">
-          <img src={modalImage} className="dialogImg" draggable="false" />
+          <img src={modalImage} className="dialogImg" alt="zoomed in" draggable="false" />
         </dialog>
       </form>
+      <p className="sectionTitle">{props.content.metadata.name}</p>
       <div className="explainer">
         <span className="sectionText typedText" ref={element} />
       </div>

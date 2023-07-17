@@ -16,12 +16,7 @@ export default function Sidebar(props) {
     return json.map((link) => {
       return (
         <div className="linkContainer" key={genRand(4)}>
-          <a
-            className="subheader"
-            href={link.url}
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href={link.url} rel="noreferrer" target="_blank">
             <button className="skillButton">
               <img
                 src={link.icon}
@@ -29,7 +24,7 @@ export default function Sidebar(props) {
                 alt={link.text}
                 title={link.text}
               />
-              <p>{link.text}</p>
+              <span>{link.text}</span>
             </button>
           </a>
         </div>
@@ -47,27 +42,23 @@ export default function Sidebar(props) {
             >
               <span className="header">{header[0]}</span>
             </button>
-            {header[1].data.length > 0 ? (
-              <>
-                <ul className="list padding subheader">
-                  {header[1].data.map((subsection) => {
-                    return (
-                      <a
-                        key={genRand(3)}
-                        href={`#${catString(subsection.name, "-")}`}
-                        onClick={() => props.move(header[1])}
-                      >
-                        <button className="skillButton">
-                          <li>{subsection.name}</li>
-                        </button>
-                      </a>
-                    );
-                  })}
-                </ul>
-              </>
-            ) : (
-              <></>
-            )}
+            <>
+              <ul className="list padding subheader">
+                {header[1].data.map((subsection) => {
+                  return (
+                    <a
+                      key={genRand(3)}
+                      href={`#${catString(subsection.name, "-")}`}
+                      onClick={() => props.move(header[1])}
+                    >
+                      <button className="skillButton">
+                        <li>{subsection.name}</li>
+                      </button>
+                    </a>
+                  );
+                })}
+              </ul>
+            </>
           </div>
         );
       }
@@ -84,21 +75,18 @@ export default function Sidebar(props) {
       />
       <div className=" sidebar">
         <div className="textCenter">
-          <img
-            src={sidebar.headshot}
-            className="headshot"
-            alt="headshot"
-            title="hi!"
-          />
           <p className="name">Alex Baird</p>
           <p className="subheader">full stack junior web developer</p>
           <div className="linkContainer">{linkMapper(sidebar.links)}</div>
         </div>
         <hr />
         {sectionMapper()}
-          <button className="skillButton" onClick={() => props.setElement(<HexGrid />)}>
-            <span className="header">playground</span>
-          </button>
+        {/*<button
+          className="skillButton"
+          onClick={() => props.setElement(<HexGrid />)}
+        >
+          <span className="header">playground</span>
+        </button>*/}
         <hr />
         <p className="header"> External Links</p>
         {linkMapper(sidebar.externalLinks)}
