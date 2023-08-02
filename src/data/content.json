@@ -49,15 +49,21 @@
       "TailwindCSS"
     ]
   },
+  "intro": {
+    "typedText": [
+      "Hi, I'm Alex, <br /><br /> I recently completed a bootcamp to learn full stack web development, and I'm looking to become a devleoper",
+      "<<<< Take a look at some of my projects <br /><br /> Or have a gander at my <a class=`introText` href=`https://github.com/TaureHorn` target=`_blank` rel=`noreferrer`>Github</a> <br /><br />Or perhaps the <a href=`https://thedeveloperacademy.com` target=`_blank` rel=`noreferrer`>Bootcamp</a> I completed"
+    ]
+  },
   "main": {
     "Projects": {
       "metadata": {
-        "explainer": "I worked on these projects after completing the web dev bootcamp to continue learning and to implement some ideas I had during the bootcamp",
+        "explainer": "Following my completion of a web dev bootcamp, I had a few projects I wanted to try, a few things still to try to learn",
         "name": "Personal Projects"
       },
       "data": [
         {
-          "info": "<p>placeholderrrrrrrrr</p>",
+          "info": "<p>A short text adventure style game designed to emulate a simplified version of a bash terminal. If you know the game Hacknet, that's the vibe.</p><p>Early in learning Javascript in the web dev bootcamp we were tasked with making a simple text adventure game in an effort to teach us the principles of Object Oriented Programming (OOP). Well, building a text adventure game was my first interest in programming several years ago and led me to learn a little python. This time around I was pretty excited and set myself a task that turned out to be far too ambitious for the week we had to complete the project. After completing the bootcamp I decided to take another crack at the idea. This time around it worked wonders I think, and taking the time to familiarise myself with OOP, especially at my own pace was marvelous.</p><p>",
           "name": "Hacking Text Adventure Game",
           "repo": "https://github.com/TaureHorn/netrunner-game_v2",
           "screenshot": "./images/screenshots/netrunner.png",
@@ -65,24 +71,31 @@
           "url": "https://taurehorn.github.io/netrunner-game_v2/"
         },
         {
-          "info": "<p>placeholderrrrrrrrr</p>",
+          "info": "<p>A browser startpage with a backend. Display, edit, encrypt or decrypt bookmarks stored in a downloadable JSON file and in a expirable cookie.</p><p>Even before I had started to learn to code I had wanted to make my own browser startpage like those I'd seen online. So I already had an excuse to make one. I also wanted to learn more about writing file uploads/downloads, express backends and encryption algorithms. As a project, I'll admit it doesn't make a whole load of sense but it was more far more about the learning exprerience than anything else. Plus, having both a frontend and backend was a small extra challenge when it came to deploying using Docker. The containers are still running on RaspberyPi and I use the site all the time!</p><p>It was really useful to get more hands on with the processes of encryption algorithms using CryptoJS. An earlier brush with Bcrypt left me a little unsatisfied given how easy an implementation of a hashing algorith it is.</p><hr /><p>There's no hosted site for this one. It's pretty simple in its function and execution so there's not a whole to see beyond whats in the repo.</p>",
           "name": "Browser Startpage",
           "repo": "https://github.com/TaureHorn/krypt-browser-startpage",
           "screenshot": "./images/screenshots/krypt.png",
           "skills": ["Javascript", "React", "Express", "JSON", "Docker"]
         },
         {
-          "info": "<p>placeholderrrrrrrrr</p>",
+          "info": "<p>A customised collection of neovim plugins, keymaps and configurations, curated exactly to my liking.</p><p>A pretty simple one really. Like I assume everyone nowadays I was introduced to writing code through VSCode. Something that was almost non-negotiable on the coding bootcamp in which I started. However, through a desire to try something different, and with a few bugbears about VSCodes implementation in linux, I moved to Neovim. I quickly fell in love with its modal editing style, the speed afforded by vim motions eliminating the need for a mouse while coding. I tried a few out of the box solutions, (LazyVim, AstroNvim e.t.c) but never managed to find one that suited me just right. So I made my own, collating some of the plugins I had liked and customised them how I want them I even had a brush with writing some Lua, though admittedly at a very shallow level.</p>",
           "name": "Neovim Config",
           "repo": "https://github.com/TaureHorn/nvim_config",
           "screenshot": "./images/screenshots/nvim.png",
           "skills": ["Neovim", "Lua"]
+        },
+        {
+          "info": "<p>Woooahh fourth wall break!</p><p>The website you're currently browsing! I put a lot of work into making it really quite simple, both to render and to update. Everything stems from a single JSON file which the site passes to different components and maps through to display all the information. Having made a portfolio before, almost entirely in pure HTML, I wanted something a little more dynamic. Something I could update without having to write a load of new HTML code. Fortunately, all this one requires to update is to drop a few images in the right folders, and edit a JSON file.</p>",
+          "name": "Personal Portfolio",
+          "repo": "https://github.com/TaureHorn/personalPortfolio",
+          "screenshot": "./images/screenshots/portfolio.png",
+          "skills": ["Javascript", "React", "JSON", "Sass"]
         }
       ]
     },
     "Web Dev Bootcamp": {
       "metadata": {
-        "explainer": "I started learning to code through a software bootcamp called The Developer Academy",
+        "explainer": "I started learning to code through a software bootcamp called The Developer Academy. Here are some of the more prominent projects.",
         "name": "Web Dev Bootcamp Projects"
       },
       "data": [
@@ -117,7 +130,7 @@
           "url": "https://taurehorn.github.io/fantasy-bestiary-quiz/"
         },
         {
-          "info": "<p>a small project built during my first week on <a href=`https://thedeveloperacademy.com/` target=`_blank` class=linkBold>The Developer Academy</a> Web Development Bootcamp. prior to this i had never coded before, beyond changing some values in css and a writing couple of &lt;p&gt; and &lt;br&gt; tags in html. so i just wrote about something i know well, volcanoes! i spent most of my msc studying them so best that i get some use out of that knowledge.</p><p>this project took a couple of days to put together and was a good challenge considering i knew nothing about coding a few days prior to starting. getting to grips the powers of bootstrap and flexbox was a both interesting and frustrating experience. neveretheless, given the time invested and the knowledge gained i'm happy with this project. sure i could now make something better in half the time, sure it's kinda ugly and, sure there's no interactability or javascript to speak of: but for a html and css newb i'm pretty proud. </p><p> i utilised bootstrap components as much as i could to save time and effort configuring the minutae of CSS. Additionally, I enjoyed experimenting with different ways of achieveing the same effects in this site. For example, I used Bootstrap cards in two different configurations and used figures to control images as well. Just some things to accelerate my learning.</p>",
+          "info": "<p>A small project built during my first week on <a href=`https://thedeveloperacademy.com/` target=`_blank` class=linkBold>The Developer Academy</a> Web Development Bootcamp. Prior to this I had never coded before, beyond changing some values in CSS and a writing couple of &lt;p&gt; and &lt;br&gt; tags in HTML. So, I just wrote about something I know well, volcanoes! I spent most of my MSc degree studying them so best that I get some use out of that knowledge.</p><p>This project took a couple of days to put together and was a good challenge considering I knew nothing about coding a few days prior to starting. Getting to grips the powers of bootstrap and flexbox was a both interesting and frustrating experience. Neveretheless, given the time invested and the knowledge gained I'm happy with this project. Sure I could now make something better in half the time, sure it's kinda ugly and, sure there's no interactability or javascript to speak of: but for a HTML and CSS newb I'm pretty proud. </p><p> I utilised bootstrap components as much as I could to save time and effort configuring the minutae of CSS. Additionally, I enjoyed experimenting with different ways of achieveing the same effects in this site. For example, I used Bootstrap cards in two different configurations and used figures to control images as well. Just some things to accelerate my learning.</p>",
           "name": "Volcanoes Info",
           "repo": "https://github.com/TaureHorn/hobbyWebsite",
           "screenshot": "./images/screenshots/volcanoes.jpg",
@@ -128,18 +141,18 @@
     },
     "Hobbies": {
       "metadata": {
-        "explainer": "I do stuff outside of web dev, sit a while and listen",
+        "explainer": "I do stuff outside of web dev too!",
         "name": "Hobby Projects"
       },
       "data": [
         {
-          "info": "<p> When the country went into lockdown and work from home became a very popular thing I, like so many others, had to adjust. For a sense of psychological separation, I dual-booted my computer. I was using Windows at the time but installed regular old Ubuntu alongside for work. That was not my first experience using a linux OS, but it was certainly the first time I had attempted to use one for real work and for a signifcant length of time. As luck would have it, I decided I much preferred Ubuntu to Windows and soon completely transitioned to Ubuntu. KDE more specifically if you're aware of the significance.</p><p> Since switching over to linux I've been slowly teaching myself to use a bash terminal. Of course I'm no sysadmin command line wizard but I can <em> cd, ls, cat, sudo, mv, cp, ssh, find,</em> e.t.c with confidence. So far in my progress of learning web development, these skills have been a godsend when working with git and GitHub. Further, they were essential for a side project of setting up a Raspberry Pi as a Network Attatched Storage (NAS) device.</p><p> Of course, I can't easily exemplify those skills, so in their stead, I can show something else. Among other things, one stereotype of <em>some</em> linux users is their obssesion with customisation and showing off that customisation. In that vein, I customised the appearance of much of my KDE desktop environment to exactly suit my aesthetic preferences.</p>",
+          "info": "<p> When the country went into lockdown and work from home became a very popular thing I, like so many others, had to adjust. For a sense of psychological separation, I dual-booted my computer. I was using Windows at the time but installed regular old Ubuntu alongside for work. That was not my first experience using a linux OS, but it was certainly the first time I had attempted to use one for real work and for a signifcant length of time. As luck would have it, I decided I much preferred Ubuntu to Windows and soon completely transitioned to Ubuntu. KDE more specifically if you're aware of the significance.</p><p> Since switching over to linux I've been slowly teaching myself to use a bash terminal. Of course I'm no sysadmin command line wizard but I can <em> cd, ls, cat, sudo, mv, cp, ssh, find,</em> e.t.c with confidence. So far in my progress of learning web development, these skills have been a godsend when working with git and GitHub. Further, they were essential for a side project of setting up a Raspberry Pi as a Network Attatched Storage (NAS) device and as a server for experimenting with self hosting using Docker.</p><p> You'll just have to take my word for it that I can use a bash terminal (though I can show off my bashrc and a few scripts if you're really interested :] ). In place of the bash terminal skill, I can show something else. Among other things, one stereotype of <em>some</em> linux users is their obssesion with customisation and showing off that customisation. In that vein, I customised the appearance of much of my KDE desktop environment to exactly suit my aesthetic preferences.</p>",
           "name": "Learning Linux",
           "screenshot": "./images/screenshots/KDE.png",
           "skills": ["Bash", "Docker", "Neovim"]
         },
         {
-          "info": "<p>Perhaps you are reading this and thinking -<em>`This is supposed to be a professional portfolio for serious work. What is this idiot doing bragging about gathering with nerds and pretending to stab goblins in his leisure!`</em>-</p><p> Were it just that I play Dungeons and Dragons it would be a reasonable - if mean spirited - thing to think. The case however is a little more complicated and if you stick with me, I might be able to explain its relevance to my skills and as creative and commerically useful person.</p><p>I've played DnD for about the last 9 years. Starting just before the current 5th Ed came out - if you are familiar. For the past ~4 years of that time, I have been running my own game as a so called Dungeon Master, or DM. This role is absolutely integral to the funcitoning of any game of DnD. As a DM, it is my responsiblity to provide the players with a world, character and plot-lines to interact with and adventure in. And yes, sometimes there are goblins to stab. This game I have been running is what is called 'homebrew', meaning entirely custom and made by me. That means the world, all the characters, all the maps and all the plotlines are written by me. No small feat to keep a group of DnD nerds entertained on a weekly basis for that length of time I assure you. -Tens of thousands of words of text, hundreds of self-made maps e.t.c </p><p> Now, to the relevance to my skills. I run this game online and the players interact with the world with the help of maps that I make. These maps started out very simply, but slowly over the course of the last four years I have taught myself to draw and made the consious decision to put effort into the creativity it requires to make these maps. Thoug I have at this point made nearly 200 maps for this game, below are just three of which I am most proud and I think exemplify my artistic talents and creativity.</p>",
+          "info": "<p>Perhaps you are reading this and thinking -<em>`This is supposed to be a professional portfolio for serious work. What is this idiot doing bragging about gathering with nerds and pretending to stab goblins in his leisure!`</em>-</p><p> Were it just that I play Dungeons and Dragons it would be a reasonable - if mean spirited - thing to think. The case however is a little more complicated and if you stick with me, I might be able to explain its relevance to my skills and as creative and commerically useful person.</p><p>I've played DnD for about the last 9 years. Starting just before the current 5th Ed came out - if you are familiar. For the past ~4 years of that time, I have been running my own game as a so called Dungeon Master, or DM. This role is absolutely integral to the funcitoning of any game of DnD. As a DM, it is my responsiblity to provide the players with a world, character and plot-lines to interact with and adventure in. And yes, sometimes there are goblins to stab. This game I have been running is what is called 'homebrew', meaning entirely custom and made by me. That means the world, all the characters, all the maps and all the plotlines are written by me. No small feat to keep a group of DnD nerds entertained on a weekly basis for that length of time I assure you. -Tens of thousands of words of text, hundreds of self-made maps e.t.c </p><p> Now, to the relevance to my skills. I run this game online and the players interact with the world with the help of maps that I make. These maps started out very simply, but slowly over the course of the last four years I have taught myself to draw and made the consious decision to put effort into the creativity it requires to make these maps. Though I have at this point made nearly 200 maps for this game, these are just four of which I am most proud and I think exemplify my artistic talents and creativity.</p>",
           "name": "Dungeons and Dragons",
           "screenshot": [
             "./images/screenshots/dnd_1.jpg",

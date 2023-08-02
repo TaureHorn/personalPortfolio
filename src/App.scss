@@ -345,6 +345,13 @@ li {
 }
 .introText {
   font-size: calc($fontSize * 4);
+  a {
+    font-size: calc($fontSize * 4) !important;
+    text-decoration: underline;
+  }
+}
+.introText a:hover {
+  cursor: $cursorPointer;
 }
 .sectionText {
   font-size: $fontSizeBig;

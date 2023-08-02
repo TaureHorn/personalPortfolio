@@ -25,7 +25,7 @@ export default function Section(props) {
   }, []);
 
   const element = useRef(null);
-  useEffect(() => {
+  function typedText() {
     const typed = new Typed(element.current, {
       showCursor: false,
       strings: [props.content.metadata.explainer],
@@ -34,7 +34,10 @@ export default function Section(props) {
     return () => {
       typed.destroy();
     };
-  }, []);
+  }
+  useEffect(() => {
+    typedText();
+  }, [props.content]);
 
   function postMapper() {
     return props.content.data.map((post, index) => {
@@ -54,7 +57,12 @@ export default function Section(props) {
     <>
       <form method="dialog" className="dialogForm">
         <dialog closed="true" id={modalID} className="centerForced dialog">
-          <img src={modalImage} className="dialogImg" alt="zoomed in" draggable="false" />
+          <img
+            src={modalImage}
+            className="dialogImg"
+            alt="zoomed in"
+            draggable="false"
+          />
         </dialog>
       </form>
       <p className="sectionTitle">{props.content.metadata.name}</p>

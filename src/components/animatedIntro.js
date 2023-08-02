@@ -1,15 +1,13 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
-export default function AnimatedIntro() {
+export default function AnimatedIntro(props) {
   const element = useRef(null);
   useEffect(() => {
     const typed = new Typed(element.current, {
       showCursor: false,
       smartBackspace: true,
-      strings: [
-        "Hi, I'm Alex, <br /><br /> I'm a junior full stack web developer.",
-      ],
+      strings: props.content.intro.typedText,
       typeSpeed: 20,
     });
     return () => {

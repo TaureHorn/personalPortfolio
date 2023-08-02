@@ -1,9 +1,9 @@
 import { useState } from "react";
-
 import HexGrid from "./hexgrid";
 
 // media
 import Arrow from "../resources/icons/arrow.svg";
+
 // custom functions
 import { catString } from "../functions/catString";
 import { genRand } from "../functions/random";
@@ -31,6 +31,7 @@ export default function Sidebar(props) {
       );
     });
   }
+
   function sectionMapper() {
     return Object.entries(props.content.main).map((header) => {
       if (header[1].data.length > 0) {
@@ -64,6 +65,7 @@ export default function Sidebar(props) {
       }
     });
   }
+
   return sidebarVisibility ? (
     <>
       <img
@@ -78,6 +80,7 @@ export default function Sidebar(props) {
           <p className="name">Alex Baird</p>
           <p className="subheader">full stack junior web developer</p>
           <div className="linkContainer">{linkMapper(sidebar.links)}</div>
+          <p> email: abaird0893@gmail.com</p>
         </div>
         <hr />
         {sectionMapper()}

@@ -9,7 +9,7 @@ import Section from "./components/section";
 import Sidebar from "./components/sidebar";
 
 export default function App() {
-  const [activeElement, updateActiveElement] = useState(<AnimatedIntro />);
+  const [activeElement, updateActiveElement] = useState(<AnimatedIntro content={Content}/>);
   function sectionMapper(input) {
     const element = <Section content={input} />;
     updateActiveElement(element);
