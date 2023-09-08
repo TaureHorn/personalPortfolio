@@ -66,29 +66,29 @@
           "info": "<p>A short text adventure style game designed to emulate a simplified version of a bash terminal. If you know the game Hacknet, that's the vibe.</p><p>Early in learning Javascript in the web dev bootcamp we were tasked with making a simple text adventure game in an effort to teach us the principles of Object Oriented Programming (OOP). Well, building a text adventure game was my first interest in programming several years ago and led me to learn a little python. This time around I was pretty excited and set myself a task that turned out to be far too ambitious for the week we had to complete the project. After completing the bootcamp I decided to take another crack at the idea. This time around it worked wonders I think, and taking the time to familiarise myself with OOP, especially at my own pace was marvelous.</p><p>",
           "name": "Hacking Text Adventure Game",
           "repo": "https://github.com/TaureHorn/netrunner-game_v2",
-          "screenshot": "./images/screenshots/netrunner.png",
+          "screenshot": "./images/screenshots/netrunner.jpg",
           "skills": ["Javascript", "React", "Bash", "Sass"],
           "url": "https://taurehorn.github.io/netrunner-game_v2/"
         },
         {
           "info": "<p>A browser startpage with a backend. Display, edit, encrypt or decrypt bookmarks stored in a downloadable JSON file and in a expirable cookie.</p><p>Even before I had started to learn to code I had wanted to make my own browser startpage like those I'd seen online. So I already had an excuse to make one. I also wanted to learn more about writing file uploads/downloads, express backends and encryption algorithms. As a project, I'll admit it doesn't make a whole load of sense but it was more far more about the learning exprerience than anything else. Plus, having both a frontend and backend was a small extra challenge when it came to deploying using Docker. The containers are still running on RaspberyPi and I use the site all the time!</p><p>It was really useful to get more hands on with the processes of encryption algorithms using CryptoJS. An earlier brush with Bcrypt left me a little unsatisfied given how easy an implementation of a hashing algorith it is.</p><hr /><p>There's no hosted site for this one. It's pretty simple in its function and execution so there's not a whole to see beyond whats in the repo.</p>",
           "name": "Browser Startpage",
-          "repo": "https://github.com/TaureHorn/krypt-browser-startpage",
-          "screenshot": "./images/screenshots/krypt.png",
+          "repo": "https://github.com/TaureHorn/kryptBookmarks",
+          "screenshot": "./images/screenshots/kryptBookmarks.jpg",
           "skills": ["Javascript", "React", "Express", "JSON", "Docker"]
         },
         {
           "info": "<p>A customised collection of neovim plugins, keymaps and configurations, curated exactly to my liking.</p><p>A pretty simple one really. Like I assume everyone nowadays I was introduced to writing code through VSCode. Something that was almost non-negotiable on the coding bootcamp in which I started. However, through a desire to try something different, and with a few bugbears about VSCodes implementation in linux, I moved to Neovim. I quickly fell in love with its modal editing style, the speed afforded by vim motions eliminating the need for a mouse while coding. I tried a few out of the box solutions, (LazyVim, AstroNvim e.t.c) but never managed to find one that suited me just right. So I made my own, collating some of the plugins I had liked and customised them how I want them I even had a brush with writing some Lua, though admittedly at a very shallow level.</p>",
           "name": "Neovim Config",
           "repo": "https://github.com/TaureHorn/nvim_config",
-          "screenshot": "./images/screenshots/nvim.png",
+          "screenshot": "./images/screenshots/nvim.jpg",
           "skills": ["Neovim", "Lua"]
         },
         {
           "info": "<p>Woooahh fourth wall break!</p><p>The website you're currently browsing! I put a lot of work into making it really quite simple, both to render and to update. Everything stems from a single JSON file which the site passes to different components and maps through to display all the information. Having made a portfolio before, almost entirely in pure HTML, I wanted something a little more dynamic. Something I could update without having to write a load of new HTML code. Fortunately, all this one requires to update is to drop a few images in the right folders, and edit a JSON file.</p>",
           "name": "Personal Portfolio",
           "repo": "https://github.com/TaureHorn/personalPortfolio",
-          "screenshot": "./images/screenshots/portfolio.png",
+          "screenshot": "./images/screenshots/portfolio.jpg",
           "skills": ["Javascript", "React", "JSON", "Sass"]
         }
       ]
@@ -117,7 +117,7 @@
           "info": "<p>A group project made over the course of a week as part of <a href=`https://thedeveloperacademy.com/` target=`_blank` class=linkBold>The Developer Academy</a> Web Dev Bootcamp. As a group we were tasked with making a website for events tracking using the MERN (Mongo, Express, React, Node) stack. Though we'd done projects for both frontend and backend using MERN, this was the first time we had done a full stack project.</p><p>This project was undertaken in my eighth week on the aforementioned coding bootcamp. This was something of a culmination of the previous three weeks learning how to build sites with React, and learning how to interact with web API's and how to build and interact with backend servers using Express and MongoDB.</p><p>If you wish to test the site, you can follow the link above. You will be greeted with a login page. You can use the following credentials to login.</p><p><strong>Username:</strong> guest</p><p><strong>Password:</strong> password</p><hr class=dashedLine /><p><strong>NOTE:</strong> The site, and the backend are both hosted for free on Render. It can be a little slow to respond sometimes. I promise the site works, sometimes Render doesn't ¯_(⊙︿⊙)_/¯</p>",
           "name": "Events Tracker",
           "repo": "https://github.com/TaureHorn/EventHandler",
-          "screenshot": "./images/screenshots/events.png",
+          "screenshot": "./images/screenshots/events.jpg",
           "skills": ["React", "Javascript", "Express", "MongoDB", "Bootstrap"],
           "url": "https://eventhandler-ajfi.onrender.com/"
         },
@@ -148,7 +148,7 @@
         {
           "info": "<p> When the country went into lockdown and work from home became a very popular thing I, like so many others, had to adjust. For a sense of psychological separation, I dual-booted my computer. I was using Windows at the time but installed regular old Ubuntu alongside for work. That was not my first experience using a linux OS, but it was certainly the first time I had attempted to use one for real work and for a signifcant length of time. As luck would have it, I decided I much preferred Ubuntu to Windows and soon completely transitioned to Ubuntu. KDE more specifically if you're aware of the significance.</p><p> Since switching over to linux I've been slowly teaching myself to use a bash terminal. Of course I'm no sysadmin command line wizard but I can <em> cd, ls, cat, sudo, mv, cp, ssh, find,</em> e.t.c with confidence. So far in my progress of learning web development, these skills have been a godsend when working with git and GitHub. Further, they were essential for a side project of setting up a Raspberry Pi as a Network Attatched Storage (NAS) device and as a server for experimenting with self hosting using Docker.</p><p> You'll just have to take my word for it that I can use a bash terminal (though I can show off my bashrc and a few scripts if you're really interested :] ). In place of the bash terminal skill, I can show something else. Among other things, one stereotype of <em>some</em> linux users is their obssesion with customisation and showing off that customisation. In that vein, I customised the appearance of much of my KDE desktop environment to exactly suit my aesthetic preferences.</p>",
           "name": "Learning Linux",
-          "screenshot": "./images/screenshots/KDE.png",
+          "screenshot": "./images/screenshots/KDE.jpg",
           "skills": ["Bash", "Docker", "Neovim"]
         },
         {
